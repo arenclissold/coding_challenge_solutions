@@ -170,3 +170,21 @@ function domainName(url) {
 domainName("http://google.co.jp")
 // => "google"
 ```
+
+```js
+// Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
+
+// For example: 1234 => 10011010010 => 5
+
+var countBits = function(n) {
+//   create a running total
+  total = 0
+// convert n into binary using the to String method with base 2
+  binaryString = n.toString(2)
+// for all letters in binaryString, plus them to the total and convert to a number using * 1
+  for (i of binaryString) {total += i * 1 }
+  return total
+}
+countBits(89)
+// => 4
+```
