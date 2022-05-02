@@ -1,4 +1,4 @@
-# Javascript Coding Solutions
+# Ruby Coding Solutions 🔺
 
 A collection of my solutions to Ruby coding challenges.
 

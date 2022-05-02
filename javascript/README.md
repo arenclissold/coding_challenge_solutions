@@ -1,4 +1,4 @@
-# Javascript Coding Solutions
+# Javascript Coding Solutions ☕️ 📜
 
 A collection of my solutions to Javascript coding challenges.
 
