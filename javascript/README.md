@@ -188,3 +188,25 @@ var countBits = function(n) {
 countBits(89)
 // => 4
 ```
+
+## Work Helper
+```js
+// created a function that converted an Australian address from an anycase string to one where everyword is capitalized except for states/territories.
+
+function capitaliseAddress(sentence) {
+  let splitStr = sentence.toLowerCase().split(' ')
+  let upperCased = []
+  const states = ['VIC', 'QLD', 'ACT', 'TAS', 'SA', 'NT', 'NSW', 'WA']
+  for (word of splitStr) {
+    if (states.indexOf(word.toUpperCase()) !== -1) {
+      upperCased.push(word.toUpperCase())
+    } else {
+      upperCased.push(word[0].toUpperCase() + word.slice(1))
+    }
+  }
+  return upperCased.join(' ')
+}
+
+capitaliseAddress("98 shirley street PIMPAMA QLD 4209")
+// => "98 Shirley Street Pimpama QLD 4209"
+```
