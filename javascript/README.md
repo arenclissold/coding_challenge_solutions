@@ -1,6 +1,59 @@
 # Javascript Coding Solutions ☕️ 📜
 
 A collection of my solutions to Javascript coding challenges.
+### Le Wagon
+
+```js
+// In this exercise, Hobbits, Elves, Dwarves and Eagles will battle against the evil Orcs, Wargs, Goblins, Uruk-hai and Trolls.
+
+// Given a string outlining the number of each soldier in the battle, write a function that counts the amount of each soldier, determines whether they are good or evil and then returns, the outcome of the war as a string:
+//`Tie` if the battlefield is empty or if Good and Evil have the same number of soldiers
+//`Good` if Good soldiers outnumber Evil soldiers
+//`Evil` if Evil soldiers outnumber Good soldiers
+
+// all soldiers are worth the same
+
+// For example: whoWinsTheWar("Hobbits:4,Dwarves:1,Elves:1,Goblins:100,Uruk-hai:1")
+// --> returns "Evil"
+
+const isGood = (soldierType) => {
+  const good = ['Hobbits', 'Elves', 'Dwarves', 'Eagles'];
+  if (good.includes(soldierType)) { return true; }
+  return false;
+};
+
+const buildSoldierObject = (battlefield) => {
+  const arr = battlefield.split(',');
+  const object = {};
+  arr.forEach((soldier) => {
+    const key = soldier.split(':')[0];
+    const value = parseInt(soldier.split(':')[1], 10);
+    object[key] = value;
+  });
+  return object;
+};
+
+const whoWinsTheWar = (battlefield) => {
+  const battlefieldObject = buildSoldierObject(battlefield);
+  const outcome = Object.keys(battlefieldObject).reduce((sum, key) => {
+    if (isGood(key)) {
+      return sum + battlefieldObject[key];
+    }
+    return sum - battlefieldObject[key];
+  }, 0);
+
+  if (outcome > 0) {
+    return "Good";
+  } if (outcome < 0) {
+    return "Evil";
+  }
+  return "Tie";
+};
+
+whoWinsTheWar(`Elves:5,Orcs:4`)
+// => "Good"
+
+```
 
 ## Code Wars
 
